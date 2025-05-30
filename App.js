@@ -10,6 +10,7 @@ import {
   Image,
   Alert,
   ActivityIndicator,
+  ScrollView,
 } from "react-native";
 
 import axios from "axios";
@@ -84,7 +85,7 @@ const App = () => {
         onChangeText={setImdbId}
         autoCapitalize="none"
       />
-
+<ScrollView>
       <TouchableOpacity style={styles.button} onPress={fetchMovieData}>
         <Text style={styles.buttonText}>Buscar</Text>
       </TouchableOpacity>
@@ -98,9 +99,15 @@ const App = () => {
             style={styles.poster}
             resizeMode="contain"
           />
-          <Text style={styles.movieTitle}>{movieData.Title}</Text>
+          
+          <Text style={styles.movieTitle}>Titulo: {movieData.Title}</Text>
+          <Text  style={styles.movieTitle}>Director: {movieData.Director}</Text>
+          <Text  style={styles.movieTitle}>Actores: {movieData.Actors}</Text>
+          <Text  style={styles.movieTitle}>Genero: {movieData.Genre}</Text>
+          
         </View>
       )}
+        </ScrollView>
     </SafeAreaView>
   );
 };
