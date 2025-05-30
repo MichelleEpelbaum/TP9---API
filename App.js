@@ -104,6 +104,12 @@ const App = () => {
           <Text  style={styles.movieTitle}>Director: {movieData.Director}</Text>
           <Text  style={styles.movieTitle}>Actores: {movieData.Actors}</Text>
           <Text  style={styles.movieTitle}>Genero: {movieData.Genre}</Text>
+          <Text  style={styles.movieTitle}>Calificaciones: </Text>
+          {movieData.Ratings?.map((rating, index))=>(
+            <Text key={index} style={styles.ratingItem}>
+              {rating}
+            </Text>
+          )
           
         </View>
       )}
